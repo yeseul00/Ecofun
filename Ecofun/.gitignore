@@ -1,0 +1,88 @@
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+application.properties
+.settings/
+.loadpath
+.recommenders
+.externalToolBuilders/
+*.launch
+
+# PyDev (Python IDE for Eclipse)
+*.pydevproject
+
+# CDT (C/C++ Development Tooling)
+.cproject
+.autotools
+
+# APT (Java annotation processor)
+.factorypath
+.apt_generated/
+.apt_generated_test/
+
+# PDT (PHP Development Tools)
+.buildpath
+
+# Scala IDE for Eclipse
+.cache-main
+.scala_dependencies
+.worksheet
+
+# STS (Spring Tool Suite)
+.springBeans
+.sts4-cache/
+
+# sbteclipse plugin
+.target
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# Code Recommenders
+.recommenders/
+
+### Gradle ###
+.gradle
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+**/build/
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+### vscode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# $ git config --global mergetool.keepBackup false
+*.orig
+
+# Created by git when using merge tools for conflicts
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+*_BACKUP_*.txt
+*_BASE_*.txt
+*_LOCAL_*.txt
+*_REMOTE_*.txt

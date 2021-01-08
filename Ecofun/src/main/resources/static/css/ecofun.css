@@ -1,0 +1,902 @@
+@charset "utf-8";
+
+/* fonts */
+@font-face {
+	font-family: "RymanEco";
+	src: url("/fonts/RymanEco-Regular.otf");
+}
+
+.RymanEco {
+	font-family: 'RymanEco', sans-serif;
+}
+
+.DoHyeon {
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+@font-face {
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+	src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+		url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-size: 24px; /* Preferred icon size */
+	display: inline-block;
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+	vertical-align: middle;
+}
+
+.material-icons.md-18 {
+	font-size: 18px;
+}
+
+.material-icons.md-24 {
+	font-size: 24px;
+}
+
+.material-icons.md-36 {
+	font-size: 36px;
+}
+
+.material-icons.md-48 {
+	font-size: 48px;
+}
+
+/*  */
+table {
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+th {
+	background: #dee2e6;
+	font-size: 1.1rem;
+}
+
+td,th {
+	padding: 5px;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+}
+
+a,button,input,textarea,img {
+	outline: none !important;
+}
+
+li {
+	list-style: none;
+}
+
+body,html {
+	overflow-x: hidden;
+	min-width: 360px;
+}
+
+input:focus,select:focus,textarea:focus,button:focus,img:focus {
+	outline: none !important;
+	outline-width: 0px;
+}
+
+@media ( max-width : 991px) {
+	.container {
+		max-width: 95%;
+	}
+}
+
+.container {
+	max-width: 1200px;
+}
+
+.d-flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Header */
+#search-result {
+	text-align: left;
+}
+
+#search-result a:hover {
+	color: #fff;
+	background-color: #0b5ed7;
+	border-color: #0a58ca;
+}
+
+.content-center {
+	margin: 0 auto;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.border-b-1 {
+	border: black solid 1px;
+}
+
+.border-r-1 {
+	border: red solid 1px;
+}
+
+.project-item {
+	margin-bottom: 3%;
+	text-align: center;
+}
+
+.project-item-title {
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: center;
+}
+
+.progress {
+	margin: 0 auto;
+}
+
+/* Project Detail */
+.project-content {
+	width: 100%;
+	padding: 7%;
+	border: 3px solid lightgray;
+	margin: 1px auto;
+	text-align: center;
+	border-radius: 15px;
+}
+
+.project-comment-list {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px;
+	border-top: 1px solid gray;
+	text-align: left;
+	border-top: 1px solid gray;
+}
+
+.project-comment-list div {
+	padding: 0 5px;
+}
+
+/* Project Order */
+.order-area td input {
+	margin: 5px auto;
+	background: #ececec;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.address-area {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Project Order Result */
+.result-area /*  */    
+	                                                                                                                                             
+.slick-slide:focus {
+	outline: none;
+}
+
+.mg-auto {
+	margin: auto;
+}
+
+/* info > company */
+#info-ecoFunLogo {
+	background-image: url('http://placehold.it/310x310');
+	background-size: 100% 100%;
+	height: 300px;
+	margin: 0 auto;
+}
+
+.findPw-input {
+	height: 50px;
+	margin: 10px auto;
+	border: lightgray solid 1px;
+}
+
+/* 회원 관리 */
+.layer-background {
+	position: absolute;
+	z-index: 2000;
+	background-color: black;
+	display: none;
+	left: 0;
+	top: 0;
+}
+
+.member-detail {
+	display: none;
+	position: fixed;
+	z-index: 2001;
+	width: 90%;
+	left: 5%;
+	top: 10%;
+	background-color: white;
+}
+
+/* footer */
+.footer {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.footer-logo {
+	color: darkgray;
+	font-size: 2em;
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+.footer-sns {
+	display: inline-flex;
+	justify-content: space-between;
+}
+
+.footer-sns img {
+	width: 35px;
+	margin: 10px 20px 30px 20px;
+}
+
+@media ( min-width : 992px) {
+	.pc-footer {
+		display: flex;
+		flex-wrap: wrap;
+		flex: 0 0 auto;
+		width: 66.6666666667%;
+		text-align: left;
+	}
+	.pc-footer div {
+		flex: 0 0 auto;
+		width: 50%;
+	}
+	.mobile-footer {
+		display: none;
+	}
+}
+
+@media ( max-width : 991px) {
+	.mobile-footer {
+		display: block;
+		margin: 0 auto 10% auto;
+		text-align: left;
+	}
+	.mobile-footer div {
+		flex: 0 0 auto;
+		width: 100%;
+	}
+	.pc-footer {
+		display: none;
+	}
+}
+
+#facebook,#instagram,#youtube,.footer-logo {
+	transition: 0.5s ease-in-out;
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	-ms-transition: 0.5s ease-in-out;
+}
+
+#facebook:hover,#instagram:hover,#youtube:hover,.footer-logo:hover {
+	opacity: 0.3;
+	cursor: pointer;
+}
+
+/*TOP MENU*/
+.wrap {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.top {
+	z-index: 5;
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	top: 0px;
+}
+
+/* Header */
+.pc-menu {
+	position: absolute;
+	z-index: 3;
+	width: 30%;
+	height: 70px;
+	left: 35%;
+	margin: 0px auto;
+	text-align: center;
+	font-size: xx-large;
+}
+
+.mobile-menu {
+	display: none;
+	position: absolute;
+	z-index: 6;
+	width: 58%;
+	left: 21%;
+	margin-top: 5px;
+	text-align: center;
+	font-size: xx-large;
+}
+
+/*메인 이미지 및 타이포*/
+.slide dl {
+	width: 1200px;
+	padding: 200px 0px;
+	margin: 0px auto;
+}
+
+/*메인화면*/
+.slide_wrap {
+	position: relative;
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 0px;
+	box-sizing: border-box;
+}
+
+.content {
+	width: 300px;
+	border: 1px solid #CCC;
+	padding: 20px;
+	margin: 40px 15px 20px 15px;
+	display: inline-block;
+}
+
+/* log in */
+.login {
+	display: inline-block;
+	padding: 15% 0 5% 0;
+	width: 400px;
+	text-align: center;
+}
+
+.login a {
+	color: #999;
+}
+
+.login h2 {
+	margin: 20px;
+	font-size: 1.2rem;
+}
+
+.login-title {
+	font-size: 1.8em;
+	color: #3A3A3A;
+	margin-top: 60px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.login_form {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 20px;
+	color: #222;
+}
+
+.email {
+	border: 1px solid #ccc;
+	background: white;
+}
+
+.password {
+	margin-top: 8px;
+	border: 1px solid #ccc;
+	background: white;
+}
+
+.auto-login {
+	text-align: left;
+	display: block;
+	position: relative;
+	top: 15px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	font-size: 1.1rem;
+	float: left;
+	color: #777;
+}
+
+.find_account {
+	float: right;
+	margin-top: 13px;
+	box-sizing: border-box;
+	padding: 4px;
+	font-size: .8rem;
+	cursor: pointer;
+}
+
+.find_account:hover {
+	color: #444;
+}
+
+.login-button,.join-button {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px;
+	border: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+.login-button {
+	color: white;
+	margin-top: 12px;
+	background: #000000ba;
+}
+
+.join-button {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 16px;
+	border: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: black;
+	background: #999;
+}
+
+.login-line {
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px solid #ccc;
+	margin: 16px 0px;
+}
+
+/* Agreement */
+.agree-list {
+	flex: 0 0 auto;
+	width: 95%;
+}
+
+.agree-list li {
+	width: 100%;
+	text-align: left;
+}
+
+.agree-area {
+	box-sizing: border-box;
+	margin-top: 4px;
+	margin-bottom: 10px;
+	padding: 10px;
+	width: 100%;
+	height: 200px;
+	min-height: 100px;
+	font-size: 0.75em;
+	line-height: 1.6em;
+	color: #666666;
+	border: 1px solid #ccc;
+	resize: none;
+}
+
+.agree-label {
+	text-align: left;
+	display: block;
+	position: relative;
+	left: 0px;
+	padding-left: 50px;
+	margin-bottom: 25px;
+	cursor: pointer;
+	font-size: 1em;
+	color: #999;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.agree-label input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.agree-checkmark {
+	position: absolute;
+	top: -4px;
+	left: 0px;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 10%;
+}
+
+.agree-label .agree-checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+/* When the radio button is checked, add a blue background */
+.agree-label input:checked ~ .agree-checkmark {
+	background-color: #000000ba;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.agree-checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.agree-label input:checked ~ .agree-checkmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.agree-label .agree-checkmark:after {
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+/* Registration */
+.register {
+	padding: 5%;
+	border-top: 1px solid #ebebeb;
+	border-right: 1px solid #ebebeb;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.register form div {
+	color: #222;
+	text-align: left;
+	margin: 0 auto;
+	box-sizing: border-box;
+	width: 75%;
+}
+
+.register form div .not {
+	width: 75%;
+}
+
+.register form div input {
+	border: 1px solid #222;
+	margin: 0 auto;
+}
+
+.register form div input:not(.not) {
+	margin: 0.5rem auto;
+}
+
+.register-label {
+	padding: 1rem;
+	font-weight: bold;
+	font-size: 1rem;
+	color: #222;
+	width: 25%;
+	box-sizing: border-box;
+	text-align: left;
+	float: left;
+	line-height: 1.3rem;
+	width: 100%;
+}
+
+.btn-id-check {
+	border: none;
+	border-radius: 3px;
+	background: #222;
+	color: white;
+}
+
+.btn-zipCode {
+	border: none;
+	border-radius: 3px;
+	background: #222;
+	color: white;
+}
+
+.btn-postnumber {
+	font-size: .875rem;
+	color: white;
+	background: #222;
+	padding: 9px;
+	position: relative;
+	top: -2px;
+	left: -8px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-register {
+	width: 100%;
+	padding: 1%;
+	border-radius: none;
+	background: #222;
+	color: white;
+	font-weight: bold;
+	font-size: 1rem;
+}
+
+.id-check-sucess {
+	padding-left: 10px;
+	color: blue;
+}
+
+.id-check-fail {
+	padding-left: 10px;
+	color: red;
+}
+
+/*결제정보*/
+.kakaopay {
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 140px;
+	width: 45px;
+	height: 20px;
+	background: red;
+	background-image: url("/assets/images/test/kakaopay.jpg");
+	background-size: cover;
+	border-radius: 3px;
+}
+
+/*글쓰기*/
+.board {
+	position: relative;
+	top: 140px;
+	width: 1000px;
+	margin: 0px auto;
+	box-sizing: border-box;
+}
+
+.board h3 {
+	border-bottom: 1px solid #222;
+	font-weight: bold;
+	font-size: 1.6rem;
+	padding: 8px 0px;
+	margin-bottom: 32px;
+}
+
+.board h2 {
+	font-size: 1.1rem;
+	font-weight: bold;
+	padding-bottom: 4px;
+	border-bottom: 2px solid #222;
+}
+
+.board i {
+	font-size: 1rem;
+	color: #cb0a0f;
+}
+
+label.subject_title::before {
+	content: "\2217";
+	color: #cb0a0f;
+	font-size: 1.1rem;
+}
+
+.alert {
+	padding: 12px;
+	box-sizing: border-box;
+	border-left: 1px solid #ebebeb;
+	border-right: 1px solid #ebebeb;
+	color: red;
+	font-size: .9rem;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 2px rgba(0, 0, 0, .05);
+}
+
+.alert-info {
+	background-image: -webkit-linear-gradient(top, #d9edf7 0, #b9def0 100%);
+	background-image: -o-linear-gradient(top, #d9edf7 0, #b9def0 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#d9edf7), to(#b9def0));
+	background-image: linear-gradient(to bottom, #d9edf7 0, #b9def0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9edf7', endColorstr='#ffb9def0', GradientType=0);
+	background-repeat: repeat-x;
+	border-color: #9acfea;
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+button.close {
+	-webkit-appearance: none;
+	padding: 0;
+	cursor: pointer;
+	background: 0 0;
+	border: 0;
+}
+
+.close {
+	float: right;
+	font-size: 21px;
+	font-weight: 700;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	filter: alpha(opacity = 20);
+	opacity: .2;
+}
+
+.alert-warning {
+	background-image: -webkit-linear-gradient(top, #fcf8e3 0, #f8efc0 100%);
+	background-image: -o-linear-gradient(top, #fcf8e3 0, #f8efc0 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fcf8e3), to(#f8efc0));
+	background-image: linear-gradient(to bottom, #fcf8e3 0, #f8efc0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffcf8e3', endColorstr='#fff8efc0', GradientType=0);
+	background-repeat: repeat-x;
+	border-color: #f5e79e;
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+/* 페이지네이션 */
+nav,.pagination {
+	text-align: center;
+}
+
+.pagination {
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	border-radius: 4px;
+}
+
+.pagination>li {
+	display: inline;
+}
+
+.pagination>li:first-child>a,.pagination>li:first-child>span {
+	margin-left: 0;
+}
+
+.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover
+	{
+	z-index: 3;
+	color: #fff;
+	cursor: default;
+	background-color: #665134;
+	border-color: #665134;
+	border: 1px solid #583f1c;
+}
+
+.pagination>li>a,.pagination>li>span {
+	position: relative;
+	float: left;
+	padding: 6px 12px;
+	margin-left: -1px;
+	line-height: 1.42857143;
+	color: #665134;
+	text-decoration: none;
+	background-color: #fff;
+	border: 1px solid #e0e0e0;
+	margin: 0 5px;
+}
+
+.date_line {
+	position: relative;
+	display: block;
+	width: 70%;
+	height: 2px;
+	background: #222;
+	margin: 12px auto 36px auto;
+}
+
+.title_line {
+	display: block;
+	width: 50%;
+	height: 5px;
+	background: #222;
+	margin: 12px auto 0px auto;
+}
+
+button.edit-button {
+	color: white;
+	background: #000000ba;
+	border: 1px solid #222;
+	box-sizing: border-box;
+	padding: 4px 8px;
+}
+
+.searchBar Button {
+	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #ebebeb));
+	background: -moz-linear-gradient(center top, #ffffff 5%, #ebebeb 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ebebeb');
+	background-color: #ffffff;
+	text-indent: 0;
+	border: 1px solid #dcdcdc;
+	border-left: none;
+	display: inline-block;
+	color: #777777;
+	font-size: .75rem;
+	font-style: normal;
+	text-decoration: none;
+	text-align: center;
+	width: 50px;
+	height: 25px;
+	box-sizing: border-box;
+}
+
+.red {
+	font-size: 1.2rem;
+	color: red;
+}
+
+.editor {
+	width: 100%;
+	height: auto;
+	border: 1px solid #dcdcdc;
+	margin-bottom: 40px;
+}
+
+.optionName {
+	flex: 0 0 auto;
+	width: 8%;
+	text-align: center;
+	background: #f7f7f7;
+	box-sizing: border-box;
+	line-height: 1.5rem;
+}
+
+/*deposit*/
+div.container h3 {
+	font-weight: bold;
+	padding-left: 8px;
+}
+
+div.container h4 {
+	margin-top: 40px;
+	font-weight: bold;
+}
+
+div.container .order-button {
+	margin-bottom: 30px;
+	padding: 20px 100px;
+}
+
+div#form-horizontal {
+	box-sizing: borderbox;
+	width: 1000px;
+	margin: 0px auto;
+	padding-left: 10px;
+}
