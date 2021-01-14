@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h3>| 문의하기</h3>
+            <hr style="margin-bottom: 5%;">
+        </div>
+
+        <div style="text-align: center; margin-bottom: 5%;">
+            <h5>작성완료를 누르면 관리자에게 전송됩니다. 답변은 나의 문의내역에서 확인 가능합니다.</h5>
+        </div>
+        
+       
+        <div>
+            <form name="smartEditorText" method="POST" action="/text/insertText" style="width: 100%;">
+                <!-- 제목 -->
+                <div style="margin-bottom: 5%;">
+                    <input type="text" class="form-control" placeholder="제목을 입력해주세요!" style="width: 100%; padding: 5px;"  required>
+                </div>
+                
+
+                <!-- 에디터 -->
+                <div style="width: 100%; margin-bottom: 5%;">
+                    <textarea id="textID" class="form-control" name="textID" style="width: 100%; min-width: 260px; resize: none;" rows="30;" required></textarea>
+                </div>
+                
+
+                <!-- 등록/취소 -->
+                 <div style="text-align:center; font-size: 1em; margin-bottom: 5%;">
+                    <input type="button" value="취소" style="width: 15%;"/>
+
+                    <input type="submit" value="등록" style="width: 15%;"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../se2/js/HuskyEZCreator.js"></script>
+    <script type="text/javascript">
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "textID",
+            sSkinURI: "../../../se2/SmartEditor2Skin.html",
+            fCreator: "createSEditor2",
+            htParams: {
+                bUseToolbar: true,
+                bUseVerticalResizer: true,
+                bUseModeChanger: false
+            }
+        });
+    </script>
+</body>
+
+</html>

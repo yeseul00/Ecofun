@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>프로젝트 리스트</title>
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <script src="./js/jquery-3.3.1.min.js"></script>
+     <style>
+          a {
+               display: contents;
+          }
+     </style>    
+     <script type="text/javascript">
+          $(function () {
+               $('#proState').change(function () {
+                    alert(this.value);
+               });
+          })
+     </script>
+</head>
+
+<body>
+     <div class="container">
+          <!-- Content-Header (프로젝트) -->
+          <div class="row">
+               <div>
+                    <h3>| 프로젝트</h3>
+               </div>
+               <div class="ml-auto" style="align-self: flex-end;">
+                    <span>총 {count * where pro_state == "진행"}건</span>
+                    <span>| 기부 {count * where pro_state = '진행' AND pro_type = '기부"}건</span>
+                    <span>| 펀딩 {count * where pro_state = '진행' AND pro_type = "펀딩"}1건</span>
+               </div>
+          </div>
+          <hr>
+
+          <div class="d-flex">
+               <!-- Filter -->
+               <div>
+                    <select class="btn btn-light" name="proState" id="proState">
+                         <option value="전체" selected>상태</option>
+                         <option value="진행">진행</option>
+                         <option value="종료">종료</option>
+                         <option value="예정">예정</option>
+                    </select>
+
+                    <select class="btn btn-light" name="proType" id="proType">
+                         <option value="전체" selected>분류</option>
+                         <option value="기부">기부</option>
+                         <option value="펀딩">펀딩</option>
+                    </select>
+               </div>
+
+               <!-- Sort -->
+               <div class="ml-auto" style="align-self: center;">
+                    <a href="#">최신순</a>
+                    <span>|</span>
+                    <a href="#">종료임박순</a>
+                    <span>|</span>
+                    <a href="#">인기순</a>
+               </div>
+          </div>
+          <br>
+
+          <!-- Content -->
+          <div class="flex">
+               <c:forEach items="${proList}" var="pList" class="form-inline">
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+                    <a href="">
+                         <div class="col-sm-6 col-lg-4">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </div>
+                    </a>
+               </c:forEach>
+          </div>
+          <br>
+
+          <!-- Pagination -->
+          <div>
+               <ul class="pagination" style="justify-content: center;">
+                    <li class="page-item disabled"><a href="#" class="page-link">&laquo;</a></li>
+                    <li class="page-item disabled"><a href="#" class="page-link">&lt;</a></li>
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                    <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+               </ul>
+          </div>
+     </div>
+</body>
+
+</html>

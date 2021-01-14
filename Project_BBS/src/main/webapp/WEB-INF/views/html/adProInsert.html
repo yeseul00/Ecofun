@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 게시</title>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../se2/js/HuskyEZCreator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../../../se2/photo_uploader/plugin/hp_SE2M_AttachQuickPhoto.js" charset="utf-8"></script>
+   
+    <style>
+        .table {
+            width: 100%;
+            border-bottom: 0.5px lightgray solid ;
+        }
+
+        th {
+            width: 20%;
+            background: #f7f7f7;
+            text-align: center;
+            padding: 10px 15px;
+        }
+      
+        #option_table{
+            border: none;
+        }
+        
+        .date{
+            display: inline;
+            width: 46%;
+        }
+        .category{
+            margin-left: 2%;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h3>| 프로젝트 게시</h3>
+            <hr>
+        </div>
+        <br>
+
+        <div>
+            <form action="" name="" id="" enctype="multipart/form-data" method="post">
+                <!-- 기본 정보 -->
+                <div style="margin-bottom: 5%;">
+                    <div>
+                        <h5>기본 정보</h5>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <th><strong>카테고리</strong></th>
+                                <td>
+                                    <label class="category"><input type="radio" name="radio" required> 기부</label>
+                                    <label class="category"><input type="radio" name="radio" >펀딩</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><strong>제목</strong></th>
+                                <td><input type="text" name="" value="" class="form-control" style="width: 100%;" required></td>
+                            </tr>
+                            <tr>
+                                <th><strong>기간</strong></th>
+                                <td>
+                                    
+                                    <input type="date" id="Date1" class="date form-control" name="" value="" onchange="check_date1();"/> 
+                                    <label style="margin-left: 2%; margin-right: 2%;" >~</label>
+                                    <input type="date" id="Date2" class="date form-control" name="" value="" onchange="check_date2();" required/>    
+                                </td>
+                            </tr>
+                            <tr>
+                                <th  style="vertical-align: middle;"><strong>옵션</strong></th>
+                                <td>
+                                    <table>
+                                            <thead id="option_table">
+                                                <tr>
+                                                    <th style="width: 10%;">번호 </th>
+                                                    <th>옵션명</th>
+                                                    <th style="width: 20%;">가격</th>
+                                                    <th style="width: 5%;">수</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="item_option_wrap">
+                                                <tr>
+                                                    <td id="count" style="vertical-align: middle; text-align: center;"> 1 </td>
+                                                    <td><input type="text" class="form-control" value="" required></td>
+                                                    <td><input type="number" class="form-control" style="display:inline; width: 85%; margin-right: 10px;" value="1000" required>원</td>
+                                                    <td style="text-align: center;"><a href="javascript:;" onclick="add_option();">+</a></td>
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                
+
+                <!-- 에디터 -->
+                <div  style="margin-bottom: 5%;">
+                    <div>
+                        <h5>상세 설명</h5>
+                    </div>
+                    <div>
+                        <textarea name="textAreaContent" id="textAreaContent" style="width:100%; height:350px;"></textarea>
+                    </div>
+                </div>
+                
+
+            <!-- 이미지 -->
+                <div  style="margin-bottom: 5%;">
+                    <div>
+                        <h5>이미지</h5>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <th><span style="color:red">*</span>이미지 1<br><span style="font-size: small;">썸네일로 표시됩니다.</span></th>
+                                <td><input type="file" name="" id="" required></td>
+                            </tr>
+                            <tr>
+                                <th>이미지 2</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <th>이미지3</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <th>이미지4</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <th>이미지5</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+
+                <!-- 신청/취소 -->
+                <div style="text-align:center; font-size: 1em; margin-bottom: 5%;">
+                    <input type="button" value="취소" style="width: 15%;"/>
+
+                    <input type="submit" value="신청" style="width: 15%;" onclick="check_date();"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    
+      
+    
+    <script>
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "textAreaContent",
+            sSkinURI: "../../../se2/SmartEditor2Skin.html",
+            htParams: {
+                bUseToolbar: true,
+                bUseVerticalResizer: true,
+                bUseModeChanger: true
+            },
+            fCreator: "createSEditor2"
+        });
+
+        function submitContents(elClickedObj) {
+            oEditors.getById["textAreaContent"].exec("UPDATE_CONTENTS_FIELD", []);
+            // 에디터의 내용에 대한 값 검증은 이곳에서
+            // document.getElementById("textAreaContent").value를 이용해서 처리한다.
+            try {
+                elClickedObj.form.submit();
+            } catch (e) {}
+        }
+
+        function pasteHTML(filepath) {
+            var sHTML = '<img src="upload' + filepath + '">';
+            oEditors.getById["textAreaContent"].exec("PASTE_HTML", [sHTML]);
+        }
+    </script>
+
+    <!-- 옵션기능 -->
+    <script type="text/javascript">
+     //<![CDATA[
+        function add_option() {
+            var re = document.getElementById('item_option_wrap');
+           if(re.rows.length<10){
+               var count=(re.rows.length)+1;
+               $('#item_option_wrap').append('<tr><td style="vertical-align: middle; text-align: center;">'+count+'</td><td><input type="text" class="form-control" value=""></td><td><input type="number" class="form-control" style="display:inline; width: 85%; margin-right: 10px;"value="0">원</td><td><a href="javascript:;" onclick="add_option();">+</a></span> <span style="float: right;"><a href="javascript:;" onclick="remove_option();">-</a></span> </td></tr> ');
+           }else{
+               alert("옵션은 최대 10개까지 추가 가능합니다.")
+           }
+            
+         
+        }
+        //]]>
+
+        //<![CDATA[
+        function remove_option() {
+            var re = document.getElementById('item_option_wrap');
+            if (re.rows.length < 1) return;
+            re.deleteRow( re.rows.length-1 );
+        }
+        //]]>
+    </script>
+
+    <!-- 날짜 설정 -->
+    <script>
+        document.getElementById('Date1').value = new Date().toISOString().substring(0, 10);
+        // ISO Standard() 형식으로 변환(YYYY-MM-dd HH:mm:ss) .substring(0, 10) 0부터 10까지 표시
+    </script>
+
+    <script type="text/javascript">
+        function check_date1(){
+            var today = new Date().toISOString().substring(0, 10);
+            var startDate = document.getElementById('Date1').value
+           
+            if(startDate < today){
+               alert("시작기간은 과거로 설정할 수 없습니다.");
+               document.getElementById('Date1').value = new Date().toISOString().substring(0, 10);
+            }
+        }
+        
+        function check_date2(){
+            var startDate = document.getElementById('Date1').value
+            var endDate = document.getElementById('Date2').value
+
+            if(startDate > endDate){
+                alert("종료기간은 시작기간보다 커야합니다.");
+                document.getElementById('Date2').value = new Date().toISOString().substring(0, 10);
+            }
+            
+        }
+    </script>
+
+</body>
+
+</html>

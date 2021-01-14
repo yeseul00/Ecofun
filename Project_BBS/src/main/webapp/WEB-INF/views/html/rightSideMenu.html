@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헤더</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+/* *{
+          border:red solid 1px;
+     } */
+</style>
+</head>
+
+<body>
+	<div class="navbar fixed-top navbar-light bg-light">
+		<div class="container">
+			<!-- 좌측 사이드메뉴 버튼 -->
+			<div>
+				<button type="button" class="btn" data-toggle="modal" data-target="#navLeft">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+
+			<!-- 로고 -->
+			<div>
+				<a href="#" class="navbar-brand">EcoFun Project</a>
+			</div>
+
+			<!-- 우측 사이드메뉴 버튼 -->
+			<div class="dropdown">
+				<button class="navbar-toggler" type="button" data-toggle="dropdown" data-target="#navRight" aria-controls="navRight" aria-expanded="false"
+					aria-label="Toggle nav"
+				>
+					<span style="display: flex; align-items: center;"> <span
+						style="background-image: url(./img/account_circle-black-36dp.svg); background-size: cover; background-position: 50% 38%; width: 36px; height: 36px;"
+					> </span>
+					</span>
+					<!-- 우측 사이드메뉴 드롭다운 -->
+
+					<div class="dropdown-menu col-lg-4 col-sm-2 " role="menu" style="right: 0; left: auto;">
+						<ul style="list-style: none; padding: 0;">
+							<label style="font-size: large;">프로젝트</label>
+							<li><a href="#"> 참여한 프로젝트 </a></li>
+							<li><a href="#"> 좋아한 프로젝트 </a></li>
+							<li><a href="#"> 프로젝트 신청하기 </a></li>
+						</ul>
+
+						<ul style="list-style: none; padding: 0;">
+							<label style="font-size: large;">문의신청 및 내역</label>
+							<li><a href="#"> 신청하기 </a></li>
+							<li><a href="#"> 문의내역 </a></li>
+						</ul>
+
+						<ul style="list-style: none; padding: 0;">
+							<label style="font-size: large;">개인정보 수정</label>
+							<li><a href="#"> 개인정보 수정 </a></li>
+							<li><a href="#"> 비밀번호 변경 </a></li>
+							<li><a href="#"> 회원 탈퇴 </a></li>
+						</ul>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- <div class="dropdown" id="navRight" tabindex="-1" role="dialog" aria-labelledby="navRight" aria-hidden="true">
+          <div class="dropdown-item"  style="background-color:coral;">
+          
+          </div>
+     </div> -->
+
+	<!-- 좌측 사이드 메뉴 (Modal) -->
+	<div class="modal fade" id="navLeft" tabindex="-1" role="dialog" aria-labelledby="navLeft" aria-hidden="true">
+		<div class="modal-dialog " role="document" style="max-width: 100%; margin: 0;">
+			<div class="modal-content" style="min-height: 100vh;">
+				<div class="modal-header container">
+					<!-- left_타이틀 -->
+					<h5 class="modal-title" id="modalTitle">EcoFun Project</h5>
+
+					<!-- left_닫기 버튼 -->
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true" style="font-size: 36px;">&times;</span>
+					</button>
+				</div>
+				<br>
+
+				<div class="modal-body container">
+					<!-- left_검색 -->
+					<div>
+						<nav class="navbar navbar-light bg-light">
+							<form class="form-inline" style="width: 100%;">
+								<input class="form-control mx-auto" type="search" placeholder="프로젝트" style="width: 70%;">
+								<button class="btn-outline-info" type="submit" style="width: 20%; background-color: #7bc4c4;">
+									<span><img src="./img/search-black-36dp.svg" alt=""></span>
+								</button>
+							</form>
+						</nav>
+					</div>
+					<br>
+					<hr>
+					<br>
+
+					<!-- left_프로젝트 -->
+					<div>
+						<a data-toggle="collapse" href="#project" role="button" aria-expanded="false" aria-controls="project"> 프로젝트 </a>
+						<div class="collapse" id="project">
+							<a class="dropdown-item" href="../default/">기부</a> <a class="dropdown-item" href="../cerulean/">펀딩</a>
+						</div>
+					</div>
+					<br>
+					<!-- left_게시판 -->
+					<div>
+						<a data-toggle="collapse" href="#board" role="button" aria-expanded="false" aria-controls="board"> 게시판 </a>
+						<div class="collapse" id="board">
+							<a class="dropdown-item" href="css/bootstrap.min.css" download>bootstrap.min.css</a>
+							<!-- <a class="dropdown-item" rel="noopener" target="_blank" href="https://jsfiddle.net/bootswatch/rnjfzjjo/">Open in JSFiddle</a> -->
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="css/bootstrap.css" download>bootstrap.css</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

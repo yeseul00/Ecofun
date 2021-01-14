@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+.swichtab-controller {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border:2px solid #444;
+}
+.recipt_tab_controller{
+	justify-content:flex-start; 
+	border-bottom:1px solid #ebebeb;
+	box-sizing: border-box;	
+}
+.swichtab-controller > li {
+  flex: 1 1 auto;  
+  box-sizing: border-box;  
+  /*border-bottom: #ebebeb 1px solid;
+  border-width: 1px 1px 1px 0;*/
+}
+ul.shop-controller{
+	justify-content: flex-start;
+}
+.swichtab-controller > li.shop_select_title{
+	flex:0 0 auto;
+	width:200px;
+}
+.swichtab-controller > li.product_tab_title{
+	flex:0 0 auto;
+	width:50%;	
+}
+.swichtab-controller > li.recipt_tab_title{
+	flex:0 0 auto;
+	width:20%;
+	border:1px solid #ebebeb;
+	border-width:1px 1px 0px 1px;
+	border-bottom:none;
+	box-sizing: border-box;
+	background:#f6f6f6;
+}
+.swichtab-controller > li:first-child {
+  border-width: 1px;
+}
+.swichtab-controller > li.shop_select_title{
+	border:1px solid #dcdcdc;
+	border-bottom:2px solid dodgerblue;
+	background:#dcdcdc;
+}
+.swichtab-controller > li > a {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  color: #444;
+  text-decoration: none;
+}
+.swichtab-controller > li.is-active > a.shopTab{
+	background:dodgerblue;
+	color:white;
+}
+.swichtab-controller > li.is-active > a {
+  background-color: #444;
+  color: #FFF;  
+}
+.swichtab-controller > li > a.cartTab{
+  color: #666;
+}
+
+.swichtab-controller > li.is-active > a.cartTab{
+  background-color: #fff;
+  color: DodgerBlue;
+  border-bottom:3px solid DodgerBlue;  
+}
+.swichtab-contents {
+  padding: 20px;
+  /*border: #70C1B3 1px solid;*/
+  border-width: 0 1px 1px 1px;
+  overflow: hidden;
+}
+.recipt_swich{
+	padding:0px;
+}
+.swichtab-contents-shop{
+  padding: 12px;
+  border: #dcdcdc 1px solid;*/
+  border-width: 0 1px 0 1px;
+  overflow:visible;
+}
+.swichtab-panel {
+  display: none;
+}
+.tabGroupCart{
+  padding:0px;
+}
+@media screen and (max-width:480px) {
+.swichtab-controller > li.shop_select_title{
+	flex:1;
+	width:50%;	
+	}
+}

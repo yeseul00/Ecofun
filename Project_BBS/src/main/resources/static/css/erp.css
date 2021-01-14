@@ -1,0 +1,68 @@
+.jsgrid-grid-header, .jsgrid-grid-body{
+	overflow: auto;
+}
+.jsgrid-grid-header {
+	font-size: 0.9em;
+}
+.jsgrid-grid-body {
+	font-size: 0.9em;
+}
+.jsgrid-header-cell {
+	padding: 0.5em;
+}
+.jsgrid-cell {
+	padding: 0.3em;
+}
+
+/* #detailsDialog start */
+#detailsDialog {
+	display: none;	
+}
+
+#detailsDialog .details-form-field input {
+	width: 200px;
+	float: right;
+}
+
+#detailsDialog .details-form-field select {
+	width: 204px;
+	height: 24px;
+	float: right;
+}
+
+#detailsDialog .details-form-field {
+	margin: 20px 0;
+}
+
+#detailsDialog .details-form-field:first-child {
+	margin-top: 10px;
+}
+
+#detailsDialog .details-form-field:last-child {
+	margin-bottom: 10px;
+}
+
+#detailsDialog .details-form-field button {
+	display: block;
+	width: 100px;
+	margin: 0 auto;
+}
+
+#detailsDialog input.error, select.error {
+	border: 1px solid #ff9999;
+	background: #ffeeee;
+}
+
+#detailsDialog label.error {
+	float: right;
+	margin-left: 100px;
+	font-size: .8em;
+	color: #ff6666;
+}
+
+#detailsDialog .required:after {
+	color: red;
+	content: " *";
+	font-family: serif;
+}
+/* #detailsDialog end */

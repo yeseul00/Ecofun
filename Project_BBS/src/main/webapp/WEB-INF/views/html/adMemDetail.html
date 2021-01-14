@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 관리(팝업)</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <style>
+        .my-custom-scrollbar {
+            position: relative;
+            height: 300px;
+            overflow: auto;
+        }
+
+        .table-wrapper-scroll-y {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 기본정보 -->
+        <div>
+            <div class="row">
+                <div>
+                    <h3>| 기본정보</h3>
+                </div>
+                <div class="ml-auto">
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true" style="font-size: xxx-large;">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <br>
+
+            <div>
+                <table border="1" style="width: 80%; text-align: center;">
+                    <tr>
+                        <th style="width: 15%;">아이디</th>
+                        <td style="width: 35%;">{아이디}</td>
+                        <th style="width: 15%;">비밀번호</th>
+                        <td style="width: 35%;">{비밀번호}</td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <td>김영숙</td>
+                        <th>연락처</th>
+                        <td>010-1234-5678</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">주소</th>
+                        <td colspan="3">{우편번호} {주소}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">{상세주소}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br><br>
+
+        <!-- 참여내역 -->
+        <div>
+            <div class="row">
+                <div>
+                    <h3>| 참여 내역</h3>
+                </div>
+            </div>
+            <br>
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <table class="table-bordered table-striped" style="text-align: center; width: 100%;">
+                    <thead>
+                        <th style="width: 15%;">날짜</th>
+                        <th style="width: 45%;">프로젝트</th>
+                        <th style="width: 10%;">참여인원</th>
+                        <th style="width: 15%;">참여금액</th>
+                        <th style="width: 15%;">상태</th>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>{mpDate}</td>
+                            <td>{mpTitle}</td>
+                            <td>{Count}</td>
+                            <td>{mpTarget}</td>
+                            <td>{mpState}</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                        <tr>
+                            <td>2020-11-08</td>
+                            <td>얼씨구 절씨구 문열어라~</td>
+                            <td>3명</td>
+                            <td>1,000,000원</td>
+                            <td>진행(75%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <br><br>
+
+        <!-- 탈퇴 -->
+        <div style="text-align: center;">
+            <button>강제 탈퇴</button>
+        </div>
+    </div>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

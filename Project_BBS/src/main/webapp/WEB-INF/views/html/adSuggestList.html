@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건의 관리</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content-Header (건의 관리) -->
+        <div class="row">
+            <div>
+                <h3>| 건의 관리</h3>
+            </div>
+            <div class="ml-auto" style="align-self: flex-end;">
+                <span>총 10건</span>
+                <span>| 신규 1건</span>
+            </div>
+        </div>
+        <hr>
+
+        <div class="col">
+            <!-- 탭 (문의|신청) -->
+            <div>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#inquiry">문의</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#apply">신청</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+
+            <div class="tab-content">
+                <!-- 문의 -->
+                <div class="tab-pane fade show active" id="inquiry">
+                    <div>
+                        <table class="table table-striped" style="width: 100%; text-align: center; padding: 0;">
+                            <tr class="thead-dark">
+                                <th style="width: 10%;">번호</th>
+                                <th style="width: 15%;">작성자</th>
+                                <th style="width: 50%;">제목</th>
+                                <th style="width: 15%;">작성일</th>
+                                <th style="width: 10%;">답변</th>
+                            </tr>
+                            <c:forEach items="${boardList}" var="bList">
+                                <tr>
+                                    <td>{BNo}</td>
+                                    <td>{BId}</td>
+                                    <td><a href="#">{BTitle}</a></td>
+                                    <td>{BDate}</td>
+                                    <td>{BState}</td>
+                                </tr>
+                                <tr>
+                                    <td>12345</td>
+                                    <td>kakao@naver.com</td>
+                                    <td><a href="#">[25235]번 프로젝트 관련하여 문의합니다.</a></td>
+                                    <td>2020-12-31</td>
+                                    <td>진행</td>
+                                </tr>
+                                <tr>
+                                    <td>12345</td>
+                                    <td>naver@kakao.com</td>
+                                    <td><a href="#">[25235]번 프로젝트 관련하여 문의합니다.</a></td>
+                                    <td>2020-12-31</td>
+                                    <td>완료</td>
+                                </tr>
+                                <tr>
+                                    <td>12345</td>
+                                    <td>naver@kakao.com</td>
+                                    <td><a href="#">[25235]번 프로젝트 관련하여 문의합니다.</a></td>
+                                    <td>2020-12-31</td>
+                                    <td>완료</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                    <br>
+
+                    <!-- Pagination -->
+                    <div>
+                        <ul class="pagination justify-center" style="justify-content: center;">
+                            <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                            <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
+                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                            <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                            <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 신청 -->
+                <div class="tab-pane fade show" id="apply">
+                    <div>
+                        <table class="table" style="width: 100%; text-align: center; padding: 0;">
+                            <tr class="thead-dark">
+                                <th style="width: 10%;">번호</th>
+                                <th style="width: 15%;">작성자</th>
+                                <th style="width: 50%;">제목</th>
+                                <th style="width: 15%;">작성일</th>
+                                <th style="width: 10%;">답변</th>
+                            </tr>
+                            <c:forEach items="${boardList}" var="bList">
+                                <tr>
+                                    <td>{BNo}</td>
+                                    <td>{BId}</td>
+                                    <td><a href="#">{BTitle}</a></td>
+                                    <td>{BDate}</td>
+                                    <td>{BState}</td>
+                                </tr>
+                                <tr>
+                                    <td>123455</td>
+                                    <td>kakao@naver.com</td>
+                                    <td><a href="#">a프로젝트 관련하여 문의합니다.</a></td>
+                                    <td>2020-12-31</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>12344</td>
+                                    <td>naver@kakao.com</td>
+                                    <td><a href="#">[25235]번 프로젝트 관련하여 문의합니다.</a></td>
+                                    <td>2020-12-31</td>
+                                    <td>검토</td>
+                                </tr>
+                                <tr>
+                                    <td>12343</td>
+                                    <td>nate@yahoo.com</td>
+                                    <td><a href="#">[25235]번 프로젝트 관련하여 문의합니다.</a></td>
+                                    <td>2020-12-31</td>
+                                    <td>반려</td>
+                                </tr>
+                                <tr>
+                                    <td>12345</td>
+                                    <td>yahoo@bing.com</td>
+                                    <td><a href="#">[25235]번 프로젝트 관련하여 문의합니다.</a></td>
+                                    <td>2020-12-31</td>
+                                    <td>승인</td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </div>
+                    <br>
+
+                    <!-- Pagination -->
+                    <div>
+                        <ul class="pagination justify-center" style="justify-content: center;">
+                            <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                            <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
+                            <li class="page-item"><a href="#" class="page-link">1</a></li>
+                            <li class="page-item"><a href="#" class="page-link">2</a></li>
+                            <li class="page-item"><a href="#" class="page-link">3</a></li>
+                            <li class="page-item"><a href="#" class="page-link">4</a></li>
+                            <li class="page-item"><a href="#" class="page-link">5</a></li>
+                            <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                            <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

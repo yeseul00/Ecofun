@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>참여한 프로젝트</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="./css/custom.min.css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-23019901-1');
+    </script>
+
+    <style>
+       /* *{
+           border: red solid 1px;
+       } */
+       /* 글자 양 옆 라인효과 */
+       .line{
+           width: 100%;
+           margin: 0;
+           padding: 0;
+           text-align: center;
+           font-size: 12px;
+       }
+       .line:after{
+           display:inline-block;
+           margin: 0 0 3px 20px ;
+           height: 1px;
+           content: "";
+           text-shadow: none;
+           background-color: black;
+           width: 40%;
+       }
+       .line:before{
+           display:inline-block;
+           margin: 0 20px 3px 0;
+           height: 1px;
+           content: "";
+           text-shadow: none;
+           background-color: black;
+           width: 40%;
+       }
+        /* 여기까지. 참고URL : 
+        https://m.blog.naver.com/PostView.nhn?blogId=blackkino&logNo=220955007615&proxyReferer=https:%2F%2Fwww.google.com%2F */
+       
+      .container{
+          border:lightgray solid 1px;
+      }
+
+      .list{
+          border-bottom: darkgray solid 1px;
+      }
+      .detail{
+          border-right: darkgray solid 1px;
+      }
+      .form-control{
+          width: 40%;
+          display: inline;
+          margin-bottom: 5%;
+      }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin: 0 auto;">
+        <div class="row">
+            <h3>참여한 프로젝트</h3>
+            <hr>
+        </div>
+        <br>
+       
+     
+    <!-- 총 참여 횟수 -->
+    <div class="row" style="margin: 5% 0;  border: black solid 1px;">
+        <div class="col-lg-10 col-sm-10" style="margin: 0 auto; display: flex; text-align: center; padding: 3%; border-bottom: lightgray solid 1px;">
+            <div class="col-lg-6 col-sm-6" style="padding:0; border-right: black solid 1px;" >
+                <label style="display: block;">총 기부금</label>
+                <lable> {00}원</lable>
+            </div>
+            <div class="col-lg-6 col-sm-6" style="padding:0" >
+                <label  style="display: block;">참여한 펀딩</label>
+                <lable> {00}회</lable>    
+            </div>
+            
+        </div>
+    <!-- 옵션선택 -->
+        <div class="col-lg-10 col-sm-10" style="margin: 0 auto; text-align: center; padding-top: 3%; padding-bottom: 3%;">
+            <input name="radio" type="radio">전체
+            <input name="radio" type="radio">기부
+            <input name="radio" type="radio">펀딩
+        </div>
+    <!-- 날짜조회 -->
+   
+      <div class="col-lg-10 col-sm-10" style="margin: 0 auto; margin-bottom: 5%; text-align: center;">
+                   
+                    <input type="date" class="form-control"> ~ <input type="date" class="form-control"> 
+                    <input type="submit" value="조회">
+                    <br>
+                    <input type="button" value="당일">
+                    <input type="button" value="3개월">
+                    <input type="button" value="6개월">
+           </div>
+           
+    </div>
+
+    <!-- 테이블 영역 -->
+        <!-- for문 돌려서 -->
+    <div class="row" style="padding: 10px; ">
+        <!-- 월 표시 -->
+        <label class="col-lg-12 col-sm-12 line" style="font-size: 14px">{20.11}</label>
+    
+        <div class="col-lg-12 col-sm-12"style="display: flex;">
+          <img src="http://placehold.it/50x50" alt="썸넬" style=" width:80px; height: 80px; margin: auto 0 auto auto;">
+            <div class="col-lg-9 col-sm-10" style="margin: 10px auto; display: flex;">
+                <div class="col-lg-9" style="text-align: left;">
+                    <div class="list"> {참여 일자} </div>
+                    <div class="list"> {프로젝트 명} </div>
+                    <div class="list"> {주최자 명} </div>
+                </div>
+                <div class="col-lg-3" style="text-align: center; margin: auto;">
+                    <div class="list"> 결제금액 </div>
+                    <div class="list">{결제액} 원</div>
+                    
+                </div>
+            </div>
+           
+        </div>
+         <!-- 상세(드롭다운) -->
+        <div class="col-lg-12 col-sm-12" style="border-bottom: lightgray solid 1px;">
+            <details style="text-align: center;">
+                <summary>상세</summary>
+               <div class="col-lg-7 col-sm-6" style="margin: 0 auto; text-align: left;">
+                   
+                    <div class="col-lg-10 col-sm-10" style="margin: 0 auto; display: flex; text-align: center; padding: 3%;">
+                        <div class="col-lg-6 col-sm-6" style="padding:0" >
+                            <div class="list detail">참여일시</div>
+                            <div class="list detail">프로젝트 마감일</div>
+                            <div class="list detail">결제상태</div>
+                            <div class="list detail">결제일</div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6" style="padding:0" >
+                            <div class="list">{참여일시}</div>
+                            <div class="list">{프로젝트 마감일}</div>
+                            <div class="list">{결제상태}</div>
+                            <div class="list">{결제일}</div> 
+                        </div>
+                    </div> 
+                    
+                </div>
+            </details>
+        </div>
+          
+    </div>
+
+  <!-- <div class="btn-group"> 
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> v 
+                    <span class="caret"></span> </button> 
+                    <ul class="dropdown-menu" role="menu"> 
+                        <li><a href="#">Action</a></li> 
+                        <li><a href="#">Another action</a></li> 
+                        <li><a href="#">Something else here</a></li> 
+                        <li class="divider"></li> 
+                        <li><a href="#">Separated link</a></li> 
+                    </ul> </div> -->  
+            <!-- <div class="btn-group">
+                <button class="dropdown" type="button" data-toggle="dropdown" 
+                aria-expanded="false" style="margin: auto; width:20px; height:20px">v</button>
+            
+                <div class="dropdown-menu" role="menu" style="right:0; left:auto; width: 30%; height: 20%; padding: 5%;">
+                    <ul style="list-style:none; padding: 5px 0;">
+                        <label style="font-size: large;">프로젝트</label>
+                        <li> <div src="#"> 참여한 프로젝트 </div></li>
+                        <li> <div src="#"> 좋아한 프로젝트 </div></li>
+                        <li> <div src="#" style="color: red;"> 프로젝트 신청목록 </div></li>
+                    </ul>
+                </div>
+            </div> -->
+       
+
+  
+     <!-- 하단 페이지번호 -->
+            <!-- Pagination -->
+            
+            <div style="text-align: center;">
+                <ul class="pagination justify-center" style="justify-content:center">
+                     <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                     <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
+                     <li class="page-item"><a href="#" class="page-link">1</a></li>
+                     <li class="page-item"><a href="#" class="page-link">2</a></li>
+                     <li class="page-item"><a href="#" class="page-link">3</a></li>
+                     <li class="page-item"><a href="#" class="page-link">4</a></li>
+                     <li class="page-item"><a href="#" class="page-link">5</a></li>
+                     <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                     <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                </ul>
+           </div>
+       
+    </div>
+</body>
+</html>
