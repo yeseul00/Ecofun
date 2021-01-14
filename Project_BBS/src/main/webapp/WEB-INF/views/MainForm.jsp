@@ -6,7 +6,7 @@ if (contentPage == null)
 %>
 <!DOCTYPE html>
 <html> 
-<head>
+<head> 
 <meta charset="utf-8">
 <title>친환경 프로젝트 에코펀!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
