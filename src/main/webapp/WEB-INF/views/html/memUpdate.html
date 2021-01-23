@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>개인정보 수정</title>
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+     <style>
+          /* *{
+               border: red solid 1px;
+          } */
+          table{
+               border-bottom: solid darkgray 1px;
+               border-top: solid darkgray 1px;
+               padding-right: 15px;
+               margin-bottom: 10%;
+          }
+          .td1{
+               border-right: darkgray solid 1px;
+               text-align: right;
+              padding-right: 15px;
+          }
+          .td2{
+               padding-left: 15px;
+          }
+          td{
+               border-bottom: solid darkgray 1px;
+               padding-bottom: 1.5%;
+               padding-top: 1.5%;
+          }
+          tr{
+               vertical-align: middle;
+          }
+          .btn{
+               float: right;
+               background-color:white;
+               /* border-color: lightgray solid 0.5px; */
+          }
+          .phone{
+               width: 20%;
+               height: 95%;
+               display: inline;
+
+          }
+          .address1{
+               width: 30%;
+               display: inline;
+               height: 30%;
+          }
+          .address2{
+               width: 75%;
+               height: 30%;
+               margin-top: 5px;
+
+          }
+          .bank{
+               width: 75%;
+               height: 20%;
+          }
+          
+     </style>
+     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		function sample6_execDaumPostcode() {
+			new daum.Postcode({
+				oncomplete : function(data) {
+					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+					// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+					var addr = ''; // 주소 변수
+					var extraAddr = ''; // 참고항목 변수
+
+					//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+					if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+						addr = data.roadAddress;
+					} else { // 사용자가 지번 주소를 선택했을 경우(J)
+						addr = data.jibunAddress;
+					}
+
+					/* // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+					if (data.userSelectedType === 'R') {
+						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+							extraAddr += data.bname;
+						}
+						// 건물명이 있고, 공동주택일 경우 추가한다.
+						if (data.buildingName !== '' && data.apartment === 'Y') {
+							extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+						}
+						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+						if (extraAddr !== '') {
+							extraAddr = ' (' + extraAddr + ')';
+						}
+						// 조합된 참고항목을 해당 필드에 넣는다.
+						document.getElementById("sample6_extraAddress").value = extraAddr;
+					} else {
+						document.getElementById("sample6_extraAddress").value = '';
+					} */
+
+					// 우편번호와 주소 정보를 해당 필드에 넣는다.
+					document.getElementById('sample6_postcode').value = data.zonecode;
+					document.getElementById("sample6_address").value = addr;
+					// 커서를 상세주소 필드로 이동한다.
+					document.getElementById("sample6_detailAddress").focus();
+				}
+			}).open();
+		}
+	</script>
+</head>
+<body>
+     <div class="container">
+     <!-- title -->
+          <div style="margin-bottom: 5%;">
+               <h2>| 개인정보 수정</h2>
+               <hr>
+          </div>
+          
+     <!-- table -->
+          <div class="row" style="margin: 0 auto;">
+               <table class="col-lg-12 col-sm-12">
+                    <tr>
+                         <td class="td1"><span style="color:orange">*</span>아이디 </td></div>
+                         <td class="td2"> {MemId} </td>
+                    </tr>
+                         <tr>
+                              <td class="td1"> <span style="color:orange">*</span>이름 </td>
+                              <td class="td2"> {MemName} </td>
+                         </tr>
+                         <tr>
+                              <td class="td1"> <span style="color:orange">*</span> 연락처 </td>
+                              <td class="td2"> <input class="form-control phone" type="text" size="1" maxlength="3" required> - <input class="form-control phone" type="text" size="1" maxlength="4" required> - <input class="form-control phone" type="text" size="1" maxlength="4" required> </td>
+                         </tr>
+                         <tr>
+                              <td class="td1">주소</td>
+                              <td class="td2">
+                                   <input type="text"  class="form-control address1" id="sample6_postcode" placeholder="우편번호" onclick="sample6_execDaumPostcode()">
+                                   <input type="button" class="btn" id="address" value="?">
+                                   <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+                                   <br>
+                                   <input type="text"  class="form-control address2" id="sample6_address" placeholder="주소" readonly="readonly">
+                                   <input type="text" class="form-control address2" id="sample6_detailAddress" placeholder="상세주소">
+                                   
+                              </td>
+                         </tr>
+
+                         <tr>
+                              <td class="td1">계좌</td> <td class="td2">은행선택 :
+                                   <input type="button" class="btn" id="bank" value="?">
+                              <select>
+                                      <option selected="selected">-선택하세요-</option>
+                                      <option>신한</option>
+                                      <option>기업</option>
+                                      <option>국민</option>
+                                      <option>우리</option>
+                                      <option>카카오</option>
+                                      <option>제일</option>
+                                      <option>농협</option>
+                              </select>
+                              <br>계좌주 &nbsp;&nbsp;&nbsp; : <input type="text" class="form-control bank"> 
+                              <br>계좌번호 : <input type="text" class="form-control bank">
+                          </tr>
+
+
+                    </table>
+                    
+               <!-- table end -->
+               <!-- 동의서 --> 
+               <div class="col-lg-12 col-sm-12" style="margin-bottom: 5%;">
+                  <h5>| 마케팅정보 제공동의</h5>
+                    <hr> 
+                    <textarea class="col-lg-12 col-sm-12" name="" id="" style="resize: none;"></textarea>
+                    <hr>
+               </div>
+               
+                   
+               
+                    <div class="upButtonWrap" role="group" aria-label="..." style="margin:0 auto;">
+                         <form action="">
+                              <button type="button" class="uploadButton">취소하기</button>
+                              <button type="submit" class="uploadButton">저장하기</button>
+                         </form>   
+                    </div>
+              
+         
+     </div>  
+     
+     <script>
+          $('#address').click(function(){
+               alert("공백은 회원가입 시 저장 안해서 그럼");
+          });
+
+          $('#bank').click(function(){
+               alert("공백은 회원가입 시 저장 안해서 그럼");
+          });
+     </script>
+
+
+</body>
+</html>

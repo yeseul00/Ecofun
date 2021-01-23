@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+div{
+	width:100%;
+	height:100%;
+	display:block;	
+}
+.bg01{
+	background:url("/assets/images/test/main_img_01.jpg") no-repeat center;
+	background-size: cover;	
+}
+.bg02{
+	background:url("/assets/images/test/main_img_02.jpg") no-repeat center;
+	background-size: cover;	
+}
+.bg03{
+	background:url("/assets/images/test/main_img_03.jpg") no-repeat center;
+	background-size: cover;
+}
+.bg04{
+	background:url("/assets/images/test/main_img_04.jpg") no-repeat center;
+	background-size: cover;	
+}
+
+#wrap{
+	margin:30px auto;
+	width:600px;
+}
+.fade_container { 
+  position:relative;
+	width:600px; 
+	height:350px; 
+	border:2px solid gold;    
+}
+.fade_container img{
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+.fade_container img:nth-child(1){
+  background-color:#fff;
+}
+.fade_container img:nth-child(2){
+  background-color:red;
+}
+.fade_container img:nth-child(3){
+  background-color:blue;
+}
+.fade_container .active{
+   	z-index:1;
+}

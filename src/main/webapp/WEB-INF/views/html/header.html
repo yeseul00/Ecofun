@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>헤더</title>
+     <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+     <div class="navbar fixed-top navbar-light bg-light">
+          <div class="container" style="padding: 0;">
+               <!-- 좌측 사이드메뉴 버튼 -->
+               <div style="padding: 0;">
+                    <button class="btn" type="button" data-toggle="modal" data-target="#navLeft">
+                         <span class="navbar-toggler-icon"></span>
+                    </button>
+               </div>
+
+               <!-- 로고 -->
+               <div style="padding:0; margin: 0 auto; text-align: center;">
+                    <a href="#" class="navbar-brand" style="margin: 0 auto;">EcoFun Project</a>
+               </div>
+
+               <!-- 우측 사이드메뉴 버튼 -->
+               <div class="btn-group">
+                    <button class="navbar-toggler" type="button" data-toggle="dropdown" aria-expanded="false">
+                         <span><img src="img/account_circle-black-36dp.svg" alt=""></span>
+                    </button>
+                    <div class="dropdown-menu" style="right:0; left:auto;">
+                         <ul style="list-style:none; padding-left: 10px;">
+                              <label style="font-size: large;">프로젝트</label>
+                              <a href=""class="dropdown-item"><li>참여한 프로젝트</li></a>
+                              <a href="#"class="dropdown-item"><li>좋아한 프로젝트</li></a>
+                              <li class="dropdown-divider"></li>
+                              
+                              <label style="font-size: large;">문의 및 신청</label>
+                              <a href="#"class="dropdown-item"><li>문의 및 신청 내역</li></a>
+                              <a href="#"class="dropdown-item"><li>문의하기</li></a>
+                              <a href="#"class="dropdown-item"><li>프로젝트 신청하기</li></a>
+                              <li class="dropdown-divider"></li>
+            
+                              <label style="font-size: large;">개인정보 수정</label>
+                              <a href="#"class="dropdown-item"><li>개인정보 수정</li></a>
+                              <a href="#"class="dropdown-item"><li>비밀번호 변경</li></a>
+                              <a href="#"class="dropdown-item"><li>회원 탈퇴</li></a>
+                         </ul>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <!-- 좌측 사이드 메뉴 (Modal) -->
+     <div class="modal fade" id="navLeft" tabindex="-1" role="dialog" aria-labelledby="navLeft" aria-hidden="true">
+          <div class="modal-dialog " role="document" style="max-width: 100%; margin: 0;">
+               <div class="modal-content" style="min-height: 100vh;">
+                    <div class="modal-header container">
+                         <!-- left_타이틀 -->
+                         <h5 class="modal-title" id="modalTitle">EcoFun Project</h5>
+
+                         <!-- left_닫기 버튼 -->
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true" style="font-size: 36px;">&times;</span>
+                         </button>
+                    </div>
+                    <br>
+
+                    <div class="modal-body container">
+                         <!-- left_검색 -->
+                         <div>
+                              <nav class="navbar navbar-light bg-light">
+                                   <form class="form-inline" style="width: 100%;">
+                                        <input class="form-control mx-auto" type="search" placeholder="프로젝트"
+                                             style="width: 70%;">
+                                        <button class="btn-outline-info" type="submit"
+                                             style="width: 20%; background-color:  #7bc4c4;">
+                                             <span><img src="img/search-black-36dp.svg" alt=""></span>
+                                        </button>
+                                   </form>
+                              </nav>
+                         </div>
+                         <br>
+                         <hr><br>
+
+                         <!-- left_프로젝트 -->
+                         <div>
+                              <a data-toggle="collapse" href="#project" role="button" aria-expanded="false"
+                                   aria-controls="project">
+                                   <label style="font-size: large;">프로젝트</label>
+                              </a>
+                              <div class="collapse" id="project">
+                                   <a class="dropdown-item" href="./">기부</a>
+                                   <a class="dropdown-item" href="../cerulean/">펀딩</a>
+                              </div>
+                         </div>
+                         <br>
+                         <!-- left_게시판 -->
+                         <div>
+                              <a data-toggle="collapse" href="#board" role="button" aria-expanded="false"
+                                   aria-controls="board">
+                                   <label style="font-size: large;">게시판</label>
+                              </a>
+                              <div class="collapse" id="board">
+                                   <a class="dropdown-item" href="css/bootstrap.min.css" download>bootstrap.min.css</a>
+                                   <!-- <a class="dropdown-item" rel="noopener" target="_blank" href="https://jsfiddle.net/bootswatch/rnjfzjjo/">Open in JSFiddle</a> -->
+                                   <div class="dropdown-divider"></div>
+                                   <a class="dropdown-item" href="css/bootstrap.css" download>bootstrap.css</a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

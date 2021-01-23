@@ -1,0 +1,78 @@
+
+/* .wrap-div-table 관련 css 시작 */
+.wrap-div-table {
+	background: #f1f1f1;
+	border: 1px solid #666;
+}
+.div-table {
+	display: table;
+	width: 100%;
+}
+.div-table-row {
+	display: table-row;
+}
+.div-table > .div-table-row:first-child > .div-table-cell {
+	border-top: 0px;
+}
+.div-table > .div-table-row > .div-table-cell {
+	border-top: 2px solid #dcdcdc;
+}
+.div-table-cell {
+	display: table-cell;
+	height: 40px;
+}
+.div-table-cell-colspan {
+	max-width:1px; overflow:visible;
+}
+.div-table-head {
+	border-right: 2px solid #dcdcdc;
+	padding-left: 0px;
+	width: 150px;
+	font-size: 1.0rem;
+	font-weight: bold;
+}
+.div-top {
+	vertical-align: top;
+}
+.div-middle {
+	vertical-align: middle;
+}
+.div-bottom {
+	vertical-align: bottom;
+}
+.div-center {
+	text-align: center;
+}
+/* .wrap-div-table 관련 css 끝 */
+
+.pt5 {
+	padding-top: 5px;
+}
+
+/* .mem_table 관련 css 시작 */	
+.mem_table {
+	display: grid;
+	margin: 5px;
+	background: #fff;
+	padding:8px;		
+	box-sizing:border-box;	
+}
+.row {
+	border:1px solid #ccc;			
+}	
+.row:last-child {
+   border-bottom:1px solid #ccc;
+}
+.row:first-child {
+	background: #dcdcdc;				
+	font-weight: bold;		
+	text-shadow: 0 2px 2px rgba(255, 255, 255, 0.4);
+}
+.cell {
+	padding: 0.4rem;
+}
+.cell:not(:last-child) {
+	border-right: 1px solid #ccc;
+}
+/* .mem_table 관련 css 끝 */
+	

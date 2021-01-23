@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 작성</title>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <style>
+        .table {
+            width: 100%;
+            border-bottom: 0.5px lightgray solid ;
+        }
+
+        th {
+            width: 20%;
+            background: #f7f7f7;
+            text-align: center;
+            padding: 10px 15px;
+        }
+
+        td {
+            width: 80%;
+            padding: 10px 15px;
+        }
+        .category{
+            margin-left: 2%;
+        }
+        .date{
+            display: inline;
+            width: 46%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h3>| 게시판 작성</h3>
+            <hr>
+        </div>
+        <br>
+
+        <div>
+            <form action="" name="" id="" enctype="multipart/form-data" method="post">
+                <!-- 기본 정보 -->
+                <div style="margin-bottom: 5%;">
+                    <div>
+                        <h5>기본 정보</h5>
+                    </div>
+                    <div>
+                        <table class="table" id="first_table">
+                            <tr>
+                                <th><strong>카테고리</strong></th>
+                                <td>
+                                    <label class="category"><input type="radio" name="radioButton" value="notice"> 공지사항</label>
+                                    <label class="category"><input type="radio" name="radioButton" value="event">이벤트</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><strong>제목</strong></th>
+                                <td><input type="text" name="" value="" class="form-control" required></td>
+                            </tr>
+                            <tr id="hidden" style="display: none;">
+                                <th><strong>기간</strong></th>
+                                <td>
+                                    
+                                    <input type="date" id="Date1" class="date form-control" name="" value="" onchange="check_date1();"/> 
+                                    <label style="margin-left: 2%; margin-right: 2%;" >~</label>
+                                    <input type="date" id="Date2" class="date form-control" name="" value="" onchange="check_date2();" required/>    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+
+                <!-- 에디터 -->
+                <div  style="margin-bottom: 5%;">
+                    <div>
+                        <h5>상세 설명</h5>
+                    </div>
+                    <div>
+                        <textarea id="ir1" style="width:100%; height:350px;"></textarea>
+                    </div>
+                </div>
+                
+
+            <!-- 이미지 -->
+                <div  style="margin-bottom: 5%;">
+                    <div>
+                        <h5>이미지</h5>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <th>이미지 1</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <th>이미지 2</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <th>이미지3</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <th>이미지4</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <th>이미지5</th>
+                                <td><input type="file" name="" id=""></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                
+
+                <!-- 신청/취소 -->
+                <div style="text-align:center; font-size: 1em; margin-bottom: 5%;">
+                    <input type="button" value="취소" style="width: 15%;"/>
+
+                    <input type="submit" value="신청"  style="width: 15%;"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../se2/js/HuskyEZCreator.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "ir1",
+            sSkinURI: "../../../se2/SmartEditor2Skin.html",
+            htParams: {
+                bUseToolbar: true,
+                bUseVerticalResizer: true,
+                bUseModeChanger: true
+            },
+            fCreator: "createSEditor2"
+        });
+    </script>
+   
+   <script type="text/javascript">
+  
+    // 카테고리에 따라 기간row 생기기.
+    $(document).ready(function(){
+    $("input:radio[name=radioButton]").click(function() {
+            var check = $(this).val();
+            status = $("#hidden").css("display"); 
+           if(check=='notice'){
+            // alert("notice="+status);
+                if (status == "table-row") { 
+                    $("#hidden").css("display", "none"); 
+                }
+            }else if(check=='event'){
+                // alert("event"+status);
+                if (status == "none") { 
+                   $("#hidden").css("display", "table-row"); 
+                } 
+            }
+        })
+    });
+
+
+    // <!-- 날짜 설정 -->
+    document.getElementById('Date1').value = new Date().toISOString().substring(0, 10);
+        // ISO Standard() 형식으로 변환(YYYY-MM-dd HH:mm:ss) .substring(0, 10) 0부터 10까지 표시
+    </script>
+
+    <script type="text/javascript">
+        function check_date1(){
+            var today = new Date().toISOString().substring(0, 10);
+            var startDate = document.getElementById('Date1').value
+           
+            if(startDate < today){
+               alert("시작기간은 과거로 설정할 수 없습니다.");
+               document.getElementById('Date1').value = new Date().toISOString().substring(0, 10);
+            }
+        }
+        
+        function check_date2(){
+            var startDate = document.getElementById('Date1').value
+            var endDate = document.getElementById('Date2').value
+
+            if(startDate > endDate){
+                alert("종료기간은 시작기간보다 커야합니다.");
+                document.getElementById('Date2').value = new Date().toISOString().substring(0, 10);
+            }
+            
+        }
+    
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content-Header (공지사항) -->
+        <div class="row">
+            <div class="col">
+                <h3>| <a href="">게시판</a> > 이벤트</h3>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Detail -->
+        <div class="row">
+            <table class="table" style="width: 100%; text-align: center; padding: 0;">
+                <tr class="thead-light">
+                    <th style="width: 10%;">{BNo}</th>
+                    <th style="width: 75%;">{BTitle}</th>
+                    <th class="d-none d-md-table-cell" style="width: 15%;">{BDate}</th>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <textarea name="" id="" cols="15" rows="15" style="width: 100%;">
+                        </textarea>
+                    </td>
+                </tr>
+                <tr class="bg-light">
+                    <td>Next</td>
+                    <td><a href="">{BTitle}</a></td>
+                    <td class="d-none d-md-table-cell">{BDate}</td>
+                </tr>
+                <tr class="bg-light">
+                    <td>Prev</td>
+                    <td><a href="">{BTitle}</a></td>
+                    <td class="d-none d-md-table-cell">{BDate}</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <div class="row" style="text-align: center;">
+            <div class="col">
+                <button>이전</button>
+            </div>
+            <div class="col">
+                <button>목록</button>
+            </div>
+            <div class="col">
+                <button>다음</button>
+            </div>            
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

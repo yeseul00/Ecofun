@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>펀딩 프로젝트 상세</title>
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <style>
+          .affix {
+               top: 0;
+               width: 100%;
+               z-index: 99;
+          }
+
+          td {
+               padding: 5px;
+               line-height: 30px;
+               text-align: center;
+          }
+
+          .mid-tab-area {
+               padding-top: 0px;
+          }
+
+          .mid-tab-bar {
+               display: block;
+               height: 50px;
+               line-height: 50px;
+               text-align: center;
+               background-color: black;
+          }
+
+          .mid-tab-list {
+               display: inline-block;
+               width: 100%;
+               padding: 0;
+               font-size: 0;
+          }
+
+          .mid-tab-item {
+               display: inline-block;
+               font-size: 18px;
+               color: #888888;
+               text-align: center;
+               width: 50%;
+               box-sizing: border-box;
+               height: 100%;
+          }
+
+          .mid-tab-item>button {
+               position: relative;
+               color: inherit;
+               display: inline-block;
+               height: 100%;
+               background-color: transparent;
+               border: none;
+               line-height: 30px;
+               font-size: inherit;
+               padding: 0;
+          }
+
+          .mid-tab-item>button:active {
+               color: #222222;
+               font-weight: bold;
+          }
+     </style>
+</head>
+
+<body>
+     <div data-spy="scroll" data-target=".navbar" data-offset="50">
+          <div>
+               <h3>| 펀딩 프로젝트 상세</h3>
+               <hr>
+          </div>
+          <br>
+
+          <div class="row">
+               <!-- 대표 이미지 -->
+               <div class="col-xs-12 col-lg-6">
+                    <img src="http://placehold.it/1240x930" alt="1240x930" style="max-width: 100%;">
+               </div>
+
+               <!-- 표 -->
+               <div class="col-xs-12 col-lg-6">
+                    <table class="table-bordered" style="width: 100%;">
+                         <tr>
+                              <td colspan="2">
+                                   <h3>{ProTitle}</h3>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td colspan="2">
+                                   <span>{ProType}</span>
+                                   <span>{ProState}</span>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <span>진행률</span>
+                              </td>
+                              <td colspan="2">
+                                   <span class="progress">
+                                        <span class="progress-bar" role="progressbar" aria-valuenow="70"
+                                             aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                                             <span class="sm-only">{Proceed}%</span>
+                                        </span>
+                                   </span>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   모인금액
+                              </td>
+                              <td>
+                                   <span>{ProNow}원</span>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <span>남은기간</span>
+                              </td>
+                              <td>
+                                   <span>{ProEnd - Sysdate}</span>
+                              </td>
+                         </tr>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <span>옵션</span>
+                              </td>
+                              <td>
+                                   <select>
+                                        <c:forEach items="{OpNo}" var="opNo">
+                                             <option>{opNo}</option>
+                                        </c:forEach>
+                                   </select>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <span>수량</span>
+                              </td>
+                              <td>
+                                   <input type="number">
+                                   <input type="button" value=" - ">
+                                   <input type="button" value=" + ">
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <span>총 금액</span>
+                              </td>
+                              <td>
+                                   <h4>{totalPrice}원</h4>
+                              </td>
+                         </tr>
+                    </table>
+               </div>
+               <div style="width:100%; text-align: center; font-size: 1.5em;;">
+                    <input type="button" value="즐겨찾기" style="width: 25%;">
+                    <div style="display: inline-block; width: 25%;"></div>
+                    <input type="button" value="밀어주기" style="width: 25%;">
+               </div>
+          </div>
+          <br><br>
+
+          <!-- 내용 및 댓글 -->
+          <nav class="mid-tab-area">
+               <div class="mid-tab-bar" data-spy="affix" data-offset-top="600">
+                    <ul class="mid-tab-list">
+                         <li class="mid-tab-item"><a href="#STORY">STORY</a></li>
+                         <li class="mid-tab-item"><a href="#COMMENT">COMMENT</a></li>
+                    </ul>
+               </div>
+          </nav>
+
+          <!-- 스토리 -->
+          <div id="STORY" class="container-fluid" style="border: 3px solid black; text-align: center;">
+               <div>
+                    <h1 style="background-color: black; color: gray; text-align: center;"><strong>스토리</strong></h1>
+               </div>
+               <textarea name="" id="" rows="100" style="width: 90%;"></textarea>
+          </div>
+
+          <!-- 댓글 -->
+          <div id="COMMENT" class="container-fluid" style="border: 3px solid black; margin: 0 auto;">
+               <div>
+                    <h1 style="background-color: black; color: gray; text-align: center;"><strong>댓글</strong></h1>
+               </div>
+               <div>
+                    <div>
+                         <p>댓글은 참여자에 한하여 허용하고 있습니다.</p>
+                    </div>
+                    <div>
+                         <p>작성된 댓글({AskNo}개)</p>
+                    </div>
+               </div>
+               <div>
+                    <table border="1" style="width:100%;">
+                         <c:forEach items="{comment}" var="">
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                              <tr>
+                                   <td style="width: 15%;">{memId}</td>
+                                   <td rowspan="2">{Content}</td>
+                              </tr>
+                              <tr>
+                                   <td>{AskDate}</td>
+                              </tr>
+                         </c:forEach>
+                    </table>
+               </div>
+
+               <div style="width: 100%;">
+                    <form>
+                         <div style="border: 1px solid black; display: flex; vertical-align: middle;">
+                              <textarea rows="3" style="width: 80%;"></textarea>
+                              <input type="submit" value="등록" style="width: 20%;">
+                         </div>
+                    </form>
+               </div>
+
+               <!-- Pagination -->
+               <div style="text-align: center;">
+                    <ul class="pagination justify-center">
+                         <li class="page-item hidden-xs"><a href="#" class="page-link">&laquo;</a></li>
+                         <li class="page-item"><a href="#" class="page-link">&lt;</a></li>
+                         <li class="page-item"><a href="#" class="page-link">1</a></li>
+                         <li class="page-item"><a href="#" class="page-link">2</a></li>
+                         <li class="page-item"><a href="#" class="page-link">3</a></li>
+                         <li class="page-item"><a href="#" class="page-link">4</a></li>
+                         <li class="page-item"><a href="#" class="page-link">5</a></li>
+                         <li class="page-item"><a href="#" class="page-link">&gt;</a></li>
+                         <li class="page-item hidden-xs"><a href="#" class="page-link">&raquo;</a></li>
+                    </ul>
+               </div>
+          </div>
+     </div>
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>

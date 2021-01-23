@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>좋아한 프로젝트 리스트</title>
+     <link rel="stylesheet" href="css/bootstrap.css">   
+</head>
+
+<body>
+     <div class="container">
+          <!-- Content-Header (좋아한 프로젝트) -->
+          <div class="row">
+               <div>
+                    <h3>| 좋아한 프로젝트</h3>
+               </div>
+               <div class="ml-auto" style="align-self: flex-end;">
+                    <span>진행 1건</span>
+                    <span>| 종료 1건</span>
+               </div>
+          </div>
+          <hr>
+
+          <div class="d-flex">
+               <!-- Filter -->
+               <div>
+                    <div class="btn-group">
+                         <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false">상태(전체)</button>
+                         <div class="dropdown-menu" style="min-width: auto;">
+                              <a class="dropdown-item active" href="#">전체</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">진행</a>
+                              <a class="dropdown-item" href="#">종료</a>
+                              <a class="dropdown-item" href="#">예정</a>
+                         </div>
+                    </div>
+                    <div class="btn-group">
+                         <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+                              aria-expanded="false">분류(전체)</button>
+                         <div class="dropdown-menu" style="min-width: auto;">
+                              <a class="dropdown-item active" href="#">전체</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">기부</a>
+                              <a class="dropdown-item" href="#">펀딩</a>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+          <!-- Content -->
+          <div class="flex">
+               <c:forEach items="${proList}" var="pList" class="form-inline">
+                    <div class="col-sm-6 col-lg-4" style="margin-bottom: 10px;">
+                         <a href="">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </a>
+                         <input type="button" value="해제하기">
+                    </div>
+                    <div class="col-sm-6 col-lg-4" style="margin-bottom: 10px;">
+                         <a href="">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </a>
+                         <input type="button" value="해제하기">
+                    </div>
+                    <div class="col-sm-6 col-lg-4" style="margin-bottom: 10px;">
+                         <a href="">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </a>
+                         <input type="button" value="해제하기">
+                    </div>
+                    <div class="col-sm-6 col-lg-4" style="margin-bottom: 10px;">
+                         <a href="">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </a>
+                         <input type="button" value="해제하기">
+                    </div>
+                    <div class="col-sm-6 col-lg-4" style="margin-bottom: 10px;">
+                         <a href="">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </a>
+                         <input type="button" value="해제하기">
+                    </div>
+                    <div class="col-sm-6 col-lg-4" style="margin-bottom: 10px;">
+                         <a href="">
+                              <img src="http://placehold.it/1240x930" alt="썸네일" style="width: 100%;">
+                              <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25"
+                                   aria-valuemin="0" aria-valuemax="100">25%</div>
+                              ProName<br>
+                              PointInfo<br>
+                              ProStart ~ Proth<br>
+                         </a>
+                         <input type="button" value="해제하기">
+                    </div>
+               </c:forEach>
+          </div>
+          <br>
+
+          <!-- Pagination -->
+          <div class="pagination" style="justify-content: center;">
+               <span class="page-item"><a href="#" class="page-link">&laquo;</a></span>
+               <span class="page-item"><a href="#" class="page-link">&lt;</a></span>
+               <span class="page-item"><a href="#" class="page-link">1</a></span>
+               <span class="page-item"><a href="#" class="page-link">2</a></span>
+               <span class="page-item"><a href="#" class="page-link">3</a></span>
+               <span class="page-item"><a href="#" class="page-link">4</a></span>
+               <span class="page-item"><a href="#" class="page-link">5</a></span>
+               <span class="page-item"><a href="#" class="page-link">&gt;</a></span>
+               <span class="page-item"><a href="#" class="page-link">&raquo;</a></span>
+          </div>
+     </div>
+
+     <script src="js/jquery.min.js"></script>
+     <script src="js/bootstrap.bundle.min.js"></script>
+     <script src="js/custom.js"></script>
+</body>
+
+</html>

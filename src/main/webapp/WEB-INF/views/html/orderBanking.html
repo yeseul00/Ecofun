@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>기부 결제 프로세스</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+/* *{
+               border: red 1px solid;
+          } */
+.table {
+	border-top: 1px darkgray solid;
+	border-bottom: 1px darkgray solid;
+	vertical-align: middle;
+
+	/* line-height: 30px; */
+	/* width: 70%; */
+}
+/* td{
+               vertical-align: middle;
+                여기서는 왜 안먹을까.... 
+          } */
+.gray {
+	/* line-height: 200%; */
+	text-align: right;
+	border-right: darkgray 3px solid;
+	background-color: lightgray;
+}
+
+tr {
+	height: 50px;
+}
+
+#label {
+	font-size: medium;
+	color: darkgray;
+	margin: 0px;
+}
+
+#img1 {
+	background-image: url('http://placehold.it/80x80');
+	background-size: cover;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+
+.bank {
+	width: 20%;
+	height: 20%;
+}
+
+.phone {
+	width: 20%;
+	height: 95%;
+	display: inline;
+}
+
+.name {
+	width: 20%;
+	height: 20%;
+}
+</style>
+
+</head>
+<body>
+	<div class="container">
+
+
+		<!-- title -->
+		<div style="margin-bottom: 5%;">
+			<h3>기부진행</h3>
+			<hr>
+		</div>
+
+
+		<!-- 프로젝트 정보 -->
+		<div>
+			<h5>| 참여정보</h5>
+			<div class="col-lg-12 col-sm-12"
+				style="margin-bottom: 5%; display: flex; border-top: darkgray solid 1px; border-bottom: darkgray solid 1px;">
+
+				<div id="img1" style="background-position: center"></div>
+
+				<div class="col-lg-11" style="text-align: left;">
+					<div class="pro" style="font-size: large; margin-bottom: 3%;">{프로젝트 명}</div>
+					<div class="col-lg-5" style="float: left; padding-left: 0;">{옵션번호} : {옵션명}</div>
+					<div class="col-lg-3" style="float: right; text-align: right;">{수량} 개</div>
+					<div class="col-lg-3" style="float: right; text-align: right;">{옵션가격}원</div>
+					<!-- floate때문에 다음줄이 올라와서 넣어줌. -->
+					<div style="clear: both;"></div>
+
+					<hr>
+					<div class="col-lg-5" style="float: left; font-size: large;">
+						<strong> 총 금액 </strong>
+					</div>
+					<div class="col-lg-3" style="float: right; text-align: right;">
+						<strong> {옵션가격 * 수량}원</strong>
+					</div>
+					<!-- <div style="clear:both;"></div> -->
+				</div>
+			</div>
+		</div>
+
+
+		<form action="">
+			<!-- 기부자 정보 -->
+			<div style="margin-bottom: 5%;">
+				<h5>| 기부자 정보</h5>
+				<div class="table">
+					<table class="col-lg-12 col-sm-12">
+						<tr>
+							<td class="gray" style="width: 18%; vertical-align: middle;">이름</td>
+							<td style="vertical-align: middle;"><input type="text" class="form-control name"
+								placeholder="익명가능"></td>
+						</tr>
+						<tr>
+							<td class="gray" style="vertical-align: middle;">연락처</td>
+							<td style="vertical-align: middle;"><input class="form-control phone" type="text"
+								size="1" maxlength="3" required> - <input class="form-control phone" type="text"
+								size="1" maxlength="4" required> - <input class="form-control phone" type="text"
+								size="1" maxlength="4" required></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<!-- 결제확인 -->
+
+			<div style="margin-bottom: 5%;">
+				<h5>| 결제금액 / 결제방법</h5>
+
+				<div class="table">
+					<table class="col-lg-12">
+						<tr>
+							<td class="gray" style="width: 18%; vertical-align: middle;">결제금액</td>
+							<td style="vertical-align: middle;">{ 옵션금액*수량 }원</td>
+						</tr>
+						<tr>
+							<td class="gray" style="vertical-align: middle;">입금은행</td>
+							<td style="vertical-align: middle;"><input type="radio" name="" id="" value="banking"
+								checked>무통장입금
+								<ul style="padding-left: 3%;">
+									<li style="margin-bottom: 10px; margin-top: 10px;">입금은행 <select name=""
+										class="form-control bank" id="" required>
+											<option selected="selected">-선택하세요-</option>
+											<option>신한</option>
+											<option>기업</option>
+											<option>국민</option>
+											<option>우리</option>
+											<option>카카오</option>
+											<option>제일</option>
+											<option>농협</option>
+									</select>
+									</li>
+									<li>입금자명 <input type="text" class="form-control name" required>
+									</li>
+								</ul>
+								<div id="label">※ 정확한 입금자명을 적어주세요</div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+
+
+			<!-- 하단 확인 버튼 -->
+			<div class="upButtonWrap" role="group" aria-label="..." style="text-align: center;">
+				<input type="button" value="취소하기">
+				<input type="submit" value="결제하기">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

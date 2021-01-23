@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의 및 신청 > 문의</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Content-Header (건의 내역) -->
+        <div class="row">
+            <div class="col">
+                <h3>| <a href="">문의 및 신청</a> > 문의</h3>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Detail -->
+        <div class="row">
+            <table class="table" style="width: 100%; text-align: center; padding: 0;">
+                <tr class="thead-light">
+                    <th style="width: 10%;">{mpiNo}</th>
+                    <th style="width: 65%;">{mpiTitle}</th>
+                    <th class="d-none d-md-table-cell" style="width: 10%;">{mpiState}</td>
+                    <th class="d-none d-md-table-cell" style="width: 15%;">{mpiDate}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <textarea name="" id="" style="width: 100%; resize: none;" >{mpiContent}</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>관리자</td>
+                    <td>
+                        {comment}
+                    </td>
+                    <td></td>
+                    <td>{mpaDate}</td>
+                </tr>
+                <tr class="bg-light">
+                    <td>Next</td>
+                    <td><a href="">{mpiTitle}</a></td>
+                    <td class="d-none d-md-table-cell">{mpiState}</td>
+                    <td class="d-none d-md-table-cell">{mpiDate}</td>
+                </tr>
+                <tr class="bg-light">
+                    <td>Prev</td>
+                    <td><a href="">{mpiTitle}</a></td>
+                    <td class="d-none d-md-table-cell">{mpiState}</td>
+                    <td class="d-none d-md-table-cell">{mpiDate}</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+
+        <div class="row" style="text-align: center;">
+            <div class="col">
+                <button>이전</button>
+            </div>
+            <div class="col">
+                <button>목록</button>
+            </div>
+            <div class="col">
+                <button>다음</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

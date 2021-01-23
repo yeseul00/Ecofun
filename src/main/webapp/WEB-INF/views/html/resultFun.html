@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>펀딩 완료</title>
+     
+     <link rel="stylesheet" href="css/bootstrap.css">
+
+     <style>
+           #img1{
+              background-image:url('http://placehold.it/80x80'); 
+              background-size : cover; 
+              width: 100%; 
+              background-repeat: no-repeat; 
+          }
+          .table{
+               border-top: 1px darkgray solid;
+               border-bottom: 1px darkgray solid;
+               vertical-align: middle;
+               
+               /* line-height: 30px; */
+               /* width: 70%; */
+          }
+          .gray{
+               /* line-height: 200%; */
+               text-align: right;
+               border-right: darkgray 3px solid;
+               background-color: lightgray;
+               
+          }
+          tr{
+               height: 50px;
+          }
+          #label{
+               font-size:medium;
+               color: darkgray;
+               margin: 0px;
+          }
+          .payLabel{
+               display: block;
+          }
+     </style>
+</head>
+<body>
+     <div class="container">
+
+          <!-- title -->
+          <div style="margin-bottom: 5%;">
+               <h3>참여완료</h3>
+               <hr>  
+          </div>
+ 
+           <!-- 참여 완료 (펀딩) -->
+           <div class="col-lg-12 col-sm-12" style="margin-bottom: 5%;">
+              
+               <div><strong>참여가 완료되었습니다. {ProTitle}에 참여해주셔서 감사합니다.</strong></div>
+               <div>참여 내역은 [마이 페이지 > 프로젝트 내역]에서 다시 확인할 수 있습니다. </div>
+          </div>
+
+         
+          <!-- 프로젝트 정보 -->
+          <div>
+               <h5 >| 참여정보</h5>
+               <div class="col-lg-12 col-sm-12"style=" margin-bottom: 5%; display: flex;border-top: darkgray solid 1px;  border-bottom: darkgray solid 1px;">
+                    
+                         <div id="img1" style="background-position: center">
+                    </div>
+                    
+                    <div class="col-lg-11" style="text-align: left;">
+                              <div class="pro" style="font-size:large; margin-bottom: 3%;"> {프로젝트 명} </div>
+                              <div class="col-lg-5" style="float: left; padding-left: 0;"> {옵션번호} : {옵션명} </div>
+                              <div class="col-lg-3" style="float: right; text-align: right;"> {수량} 개</div>
+                              <div class="col-lg-3" style="float: right; text-align: right;"> {옵션가격}원</div>
+                              <!-- floate때문에 다음줄이 올라와서 넣어줌. -->
+                              <div style="clear:both;"></div>
+                              
+                              <hr>
+                              <div class="col-lg-5" style="float: left; font-size: large;"><strong> 총 금액 </strong></div>
+                              <div class="col-lg-3" style="float: right; text-align: right;"><strong> {옵션가격 * 수량}원</strong></div>
+                              <!-- <div style="clear:both;"></div> -->
+                         </div>
+                    </div>
+               </div>
+
+
+                 <!-- 기부자 정보 -->
+               <div style="margin-bottom: 5%;">
+                    <h5>| 참여자 정보</h5>
+                    <div class="table" >
+                         <table class="col-lg-12 col-sm-12">
+                              <tr >
+                                   <td class="gray" style="width: 18%; vertical-align: middle;">이름</td>
+                                   <td style="vertical-align: middle;">{ 주문자 이름}</td>
+                              </tr>
+                              <tr>
+                                   <td class="gray" style="vertical-align: middle;">연락처</td>
+                                   <td style="vertical-align: middle;">{ 주문자 연락처 }</td>
+                              </tr>
+                         </table>
+                    </div> 
+               </div> 
+          
+               <!-- 배송지 확인 -->
+        
+          <div style="margin-bottom: 5%;">
+               <h5>| 배송지 확인</h5>
+              
+               <div class="table" >
+                    <table class="col-lg-12">
+                         <tr>
+                              <td class="gray" style="width: 18%; vertical-align: middle;">수령자</td>
+                              <td style="vertical-align: middle;">{ 수령자 }</td>
+                         </tr>
+                         <tr>
+                              <td class="gray" style="width: 18%; vertical-align: middle;">연락처</td>
+                              <td style="vertical-align: middle;">{ 수령자 연락처 }</td>
+                         </tr>
+                         <tr>
+                              <td class="gray" style="width: 18%; vertical-align: middle;">주소</td>
+                              <td style="vertical-align: middle;">{ 배송지 }</td>
+                         </tr>
+                         <tr>
+                              <td class="gray" style="width: 18%; vertical-align: middle;">요청사항</td>
+                              <td style="vertical-align: middle;">{ 요청사항 }</td>
+                         </tr>
+                    </table>
+               </div> 
+          </div> 
+          
+               <!-- 결제확인 -->
+               
+               <div style="margin-bottom: 5%;">
+                    <h5>| 결제금액 /결제수단 확인</h5>
+               
+                    <div class="table" >
+                         <table class="col-lg-12">
+                              <tr>
+                                   <td class="gray" style="width: 18%; vertical-align: middle;">결제금액</td>
+                                   <td style="vertical-align: middle;">{ 옵션금액*수량 }원</td>
+                              </tr>
+                              <tr>
+                                   <td class="gray" style="vertical-align: middle;">결제방법</td>
+                                   <td style="vertical-align: middle;">
+                                        <label class="payLabel">{ 신용카드/페이 }</label>
+                                   </td>
+                              </tr>
+                              <!-- 빼도 되는 tr -->
+                              <tr>
+                                   <td class="gray" style="vertical-align: middle;">결제일시</td>
+                                   <td style="vertical-align: middle;">
+                                        <label class="payLabel">{ 결제일시 }</label>
+                                   </td>
+                              </tr>
+                         </table>
+                    </div> 
+               </div> 
+
+
+
+               <!-- 하단 확인 버튼 -->
+               <div class="upButtonWrap" role="group" aria-label="..." style="text-align: center;">
+                    <form action="">
+                         <!-- 확인 누르면 결제한 프로젝트 상세페이지로 넘어가기 -->
+                          <input type="submit" value="확인">
+                     </form>  
+               </div>
+               
+     </div>
+</body>
+</html>

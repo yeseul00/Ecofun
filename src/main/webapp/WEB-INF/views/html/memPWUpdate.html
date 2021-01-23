@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비밀번호 변경</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<style>
+#label {
+	font-size: large;
+	color: darkgray;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+
+		<!-- title -->
+		<div style="margin-bottom: 10%;">
+			<h1>| 비밀번호 변경</h1>
+			<hr>
+		</div>
+
+		<!-- 변경 폼 -->
+		<form action="">
+			<div class="row" style="margin: 0 auto; margin-bottom: 15%;">
+				<div class="col-lg-12 col-sm-12" style="text-align: center;">
+					<ul>
+						<div style="margin-top: 10%;">
+							<label><li>현재의 비밀번호 입력 :</li></label> <input type="password" class=" form-control password" required>
+						</div>
+						<hr>
+						<div>
+							<label><li>새로운 비밀번호 입력 :</li></label> <input type="password" class="form-control password" required>
+						</div>
+						<div>
+							<label><li>새로운 비밀번호 확인 :</li></label> <input type="password" class="form-control password" required>
+						</div>
+					</ul>
+					<div>
+						<label id="label"> ※ 영문 숫자, 특수문자를 조합하여 8~20자 이내로 입력</label>
+					</div>
+				</div>
+			</div>
+
+			<!-- 하단 변경 버튼 -->
+			<div class="upButtonWrap" role="group" aria-label="..." style="text-align: center;">
+				<input type="button" value="취소하기"> <input type="submit" value="저장하기">
+			</div>
+		</form>
+	</div>
+
+	<!-- <script>
+          var pa1 = $('.password')[0].innerText.length();
+          alert(pa1);
+     </script> -->
+</body>
+</html>
